@@ -12,10 +12,9 @@ body{
 .container{
     height: 100%;
     width: 70%;
-    margin: 20px auto;
+    margin: 10px auto;
  
-   
-  
+ 
 }
 
  #mainContentContainer{
@@ -91,7 +90,7 @@ width: 200px;
 .navTop{
 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
-    font-size: 20px;
+   
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -132,8 +131,9 @@ width: 200px;
 
 #navListBottom{
 
-    font-size: 1px;
+ 
     display: flex;
+
     width: 20%;
   
     padding: 5px 5px;
@@ -175,12 +175,10 @@ width: 200px;
 }
 
 #aboutSectionPara{
-    
-width:50%;
+    font-size: 16px;
+    width:50%;
 
 }
-
-
 
 
 #aboutSection img{
@@ -190,24 +188,27 @@ width:50%;
 } 
 
 #photographySection{
-    width:90%;
     padding:40px 70px;
+    width:90%;
+    gap: 10px;
 }
 
 #photographySection p{
-    font-size: 22px;
+    font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
 
 }
 
 #photographySection img{
-    height:150px;
-    width:150px;
+
+    height:120px;
+    width:120px;
 }
 
 #artSection{
-    width:90%;
     padding:40px 70px;
+    width:90%;
+    gap: 10px;
 }
 
 #artSection p{
@@ -218,8 +219,8 @@ width:50%;
 
 
 #artSection img{
-    height:150px;
-    width:150px;
+    height:120px;
+    width:120px;
 }
 
 
@@ -260,6 +261,9 @@ width:50%;
     width: 300px;
 }
 
+
+/* RESUME section */
+
 #resumeImageContainer{
    
     display: flex;
@@ -271,9 +275,16 @@ width:50%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 }
 
+#resumeImageContainer button{
+    border:1px solid rgba(0, 0, 0, 0.296);
+    background-color: white;
+    }
+    
+
 #resumeImageContainer img{
-height: 300px;
-width: 200px;
+height: 250px;
+width: 160px;
+
 }
 
 #resumeImageContainer button:hover{
@@ -286,20 +297,22 @@ width: 200px;
 }
 
 #linksContainer{
-    padding: 20px;
-    height:auto;
-    width: auto;
-    margin:20px;
-    
+    padding:0px;
+    overflow:hidden;
 }
 
-#linksContainer li{
-  
+#linksContainer ul{
+    padding:0px;
+    overflow:hidden;
+}
+
+
+.socialLinks{
     list-style-type:none;
-    padding:20px 0px;
+    padding: 20px;
+    font-size: 17px;
     
 }
-
 
 
 @media all and (max-width:1000px) {
@@ -354,24 +367,29 @@ width: 200px;
         
     }
 
+    #resumeImagePara{
+        font-size: 13px;
+    }
     #navListBottom{
 
     
         display: flex;
         width: 100%;
-        font-size: 10px;
-        
         padding:5px 0px;
         gap: 15px;
     }
 
+    .listItems a{
+        font-size: 14px;
+       
+    }
     
    #aboutSection{
     
-    display: flex;
+   
     flex-direction: column;
     width:100%;
-  padding:5px 5px;
+   padding:5px 5px;
     
    }   
    
@@ -380,8 +398,26 @@ width: 200px;
  #aboutSectionPara{
     
     width:100%;
-    padding: 10px;
+    font-size: 12px;
     
+    
+    
+    
+ }
+
+ #aboutSectionImage{
+    padding:5px 5px;
+    width:100%;
+    height:300px;
+    width:300px;
+    margin:auto 5px;
+ }
+
+ #aboutSectionImage img{
+ 
+    height:250px;
+    width:250px;
+    margin:auto 5px;
  }
 
  .container{
@@ -391,20 +427,33 @@ width: 200px;
   
  }
 
- #aboutSection img{
-    height:300px;
-    width:300px;
-    margin:auto 5px;
- } 
+ 
 
  #photographySection{
-    width:100%;
+    /* width:100%;
     padding:20px 20px;
+    height:200px;
+    width:90%;
+    display: flex;
+    overflow: scroll;
+    gap: 10px; */
+
+    width:100%;
+    padding:20px 20px;  
+    
  }
 
  #artSection{
     width:100%;
-    padding:20px 20px;
+    padding:20px 20px;  
  }
+
+
+ .socialLinks{
+    
+    font-size: 14px;
+    
+}
+
  
 }
