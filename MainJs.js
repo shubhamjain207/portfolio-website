@@ -15,6 +15,9 @@ let appContent1 = document.getElementById("appContent");
 let webContent1 = document.getElementById("webContent");
 
 
+
+
+
 const firebaseConfig = {
 
   apiKey: "AIzaSyA8pF1EjwkanlYJb_qYq-Zn1wNhvjgeWqg",
@@ -265,4 +268,5 @@ querySnapshot2.forEach((doc) => {
    }
 
 });
+
 

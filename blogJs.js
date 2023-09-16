@@ -19,7 +19,7 @@
   let blogList1 = document.getElementById("blogList");
 
 
-
+  
   const firebaseConfig = {
 
     apiKey: "AIzaSyA8pF1EjwkanlYJb_qYq-Zn1wNhvjgeWqg",
@@ -91,7 +91,10 @@
           
       <div class="blogItem">
     
-      <iframe src=${item.image}></iframe>
+    <video width="300" height="270" controls muted>
+      <source src="${item.image}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video> 
     
       <p class="blogHeading">
             ${item.heading + " " + item.date}
@@ -192,5 +195,4 @@ const file = file1.files[0];
  
 
 });
-
 

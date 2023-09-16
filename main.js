@@ -9,22 +9,22 @@ let resumelink = document.getElementsByClassName('resumelink')[0];
 const currentPageUrl = window.location.href;
 
 
-if (currentPageUrl.includes('index.html')) {
+if (currentPageUrl.includes('index')) {
   homelink.classList.add('active-link');
 }
 
-else if (currentPageUrl.includes('Blogs.html')) {
+else if (currentPageUrl.includes('Blogs')) {
   bloglink.classList.add('active-link');
 } 
-else if (currentPageUrl.includes('About.html')) {
+else if (currentPageUrl.includes('About')) {
   aboutlink.classList.add('active-link');
 } 
 
-else if (currentPageUrl.includes('Contact.html')) {
+else if (currentPageUrl.includes('Contact')) {
     contactlink.classList.add('active-link');
 }
 
-else if (currentPageUrl.includes('Resume.html')) {
+else if (currentPageUrl.includes('Resume')) {
   resumelink.classList.add('active-link');
 }
 
@@ -88,6 +88,18 @@ let b = [
 
 
 ]
+
+let blogForm = document.getElementById("BlogForm");
+
+
+function secretBtn(){
+  if(blogForm.style.display === "flex")
+          blogForm.style.display = "none";
+
+  else
+  blogForm.style.display = "flex";
+}
+
 
 let photographySection1 = document.getElementById("photographySection");
 
