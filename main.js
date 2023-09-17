@@ -29,10 +29,6 @@ else if (currentPageUrl.includes('Resume')) {
 }
 
 
-
-
-
-
 let a = [ 
 
   "20230405_114448.jpg",

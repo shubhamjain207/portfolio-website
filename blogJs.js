@@ -76,8 +76,7 @@
             ${item.heading + " " + item.date}
       </p>
     
-    
-    
+
       <p class="blogContent">
          ${item.content}
       </p>
@@ -91,10 +90,7 @@
           
       <div class="blogItem">
     
-    <video width="300" height="270" controls muted>
-      <source src="${item.image}" type="video/mp4">
-      Your browser does not support the video tag.
-    </video> 
+    <a href="${item.image}">Link</a>
     
       <p class="blogHeading">
             ${item.heading + " " + item.date}
