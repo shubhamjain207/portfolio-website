@@ -73,7 +73,7 @@
       <div class="blogItem"> 
     
       <p class="blogHeading">
-            ${item.heading +  "" + item.date}
+            ${item.heading +  " | " + item.date}
       </p>
     
 
@@ -93,7 +93,7 @@
     <a href="${item.image}">Link</a>
     
       <p class="blogHeading">
-            ${item.heading + " " + item.date}
+            ${item.heading + " | " + item.date}
       </p>
     
     
