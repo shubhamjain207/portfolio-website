@@ -203,12 +203,12 @@ width: 200px;
     color:blue;
 }
 
+/* HOME SECTION */
 
 #BlogForm{
-   position: fixed;
+    position: fixed;
     display: none;
     flex-direction: column;
-    
     justify-content: center;
     align-items: center;
 }
@@ -222,50 +222,51 @@ width: 200px;
 }
 
 .blogItem{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    width: 80%;
+    font-family:Helvetica;
+    width: 70%;
+    color:#333;
     height: auto;
     padding: 20px;
-    border-bottom:1px solid rgba(0, 0, 0, 0.333);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    border-bottom:1px solid rgba(0, 0, 0, 0.218);
+    font-size: 13px;
+    
 }
 
 .blogHeading{
-    font-weight: bolder;
-    text-decoration: underline;
+    font-weight:500;
 }
+
 
 .blogItem img{
-    height: 200px;
-    width: 300px;
+    height: 180px;
+    width: 280px;
 }
 
 
-/* RESUME section */
+/* Contact SECTION */
 
 #resumeImageContainer{
    
     display: flex;
-   
     justify-content: center;
-  
-    
+    width: 70%;
+    margin: 50px;
     gap: 100px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    font-family: 11px;
+    font-family: Helvetica;
 }
+
+
 
 #resumeImageContainer button{
     border:1px solid rgba(0, 0, 0, 0.296);
     background-color: white;
-    }
+}
     
 
 #resumeImageContainer img{
-height: 250px;
-width: 160px;
+height: 200px;
+width: 110px;
 
 }
 
@@ -275,14 +276,14 @@ width: 160px;
 }
 
 #pdf123{
+    font-size: 12px;
     color: rgba(0, 0, 0, 0.608);
 }
 
-/* ABOUT SECTION */
-
-
-
-
+#linksContainer{
+    display: flex;
+    gap: 20px;
+}
 
 
 .socialLinks {
@@ -291,7 +292,12 @@ width: 160px;
     padding: 10px;
     font-size: 15px;
     
-    
+}
+
+
+#resumeImagePara p{
+   
+    font-size: 13px;
 }
 
 .socialLinks a{
@@ -299,63 +305,48 @@ width: 160px;
     font-size: 13px;
 }
 
+.socialLinks a:hover{
+    color:blue;
+    text-decoration: underline;
+}
+
+.soc p{
+    font-family:Helvetica;
+    font-size: 13px;
+}
 
 
 
 @media all and (max-width:1000px) {
 
-    #appContent{
-        
-       grid-template-columns: auto; 
-       grid-gap: 50px;
-    }
-    
-    #mainContentContainer{
-        width: 20%;
-   
-        gap:20px;
-    } 
+  /* HOME SECTION */
 
-     #graphicsContent{
-       
-        
-       grid-template-columns: auto ;
-       grid-gap: 50px;
-     } 
-    
-      #webContent{
-       
-        grid-gap: 50px;
-       grid-template-columns: auto ;
-     } 
 
-   
-    
-    #contents img{
-    height: 80px;
-    width: 80px;
-    }
-    
-    .contentItem iframe{
-       
-        height: 80px;
-        width: 80px; 
-    
-    }
 
-    #resumeImageContainer{
-       
-        display: flex;
-        flex-direction: column;
-       
-        gap: 10px;
-        padding:40px;
-        
-    }
+.blogItem{
+    font-family:Helvetica;
+    width: 90%;
+    height: auto;
+   padding:20px;
+    border-bottom:1px solid rgba(0, 0, 0, 0.218);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     align-items: center;
+     font-size: 12px;
+}
 
-    #resumeImagePara{
-        font-size: 13px;
-    }
+.blogContent{
+    text-align:center;
+}
+
+
+
+.blogItem img{
+    height: 120px;
+    width: 200px;
+}
+
 
     /* ABOUT SECTION */
     
@@ -377,10 +368,6 @@ width: 160px;
   
     
    }   
-
-
-
-
 
 
  #aboutSectionImage img{
@@ -414,12 +401,59 @@ overflow: scroll;
 overflow: scroll;
  }
 
+/* CONTACT SECTION */
 
- .socialLinks{
+#resumeImageContainer{
+       
+   
     
-    font-size: 14px;
+    
+    gap: 10px;
+   
     
 }
+
+#resumeImagePara p{
+   
+    font-size: 11px;
+}
+
+
+ #resumeImageContainer{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 5px;
+    gap: 20px;
+     padding:40px;
+
+}
+
+#resumeImageContainer button{
+    border:1px solid rgba(0, 0, 0, 0.296);
+    background-color: white;
+}
+    
+
+#resumeImageContainer img{
+height: 150px;
+width: 80px;
+
+}
+
+
+#linksContainer{
+    margin:0px;
+    padding:0px;
+    gap: 0px;
+    
+}
+
+.socialLinks a{
+    font-size:10px;
+}
+
+
 
  
 }

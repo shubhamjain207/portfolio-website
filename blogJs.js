@@ -73,7 +73,7 @@
       <div class="blogItem"> 
     
       <p class="blogHeading">
-            ${item.heading + " " + item.date}
+            ${item.heading +  "" + item.date}
       </p>
     
 
@@ -115,7 +115,7 @@
           <img src=${item.image}>
     
           <p class="blogHeading">
-                ${item.heading + " " + item.date}
+                ${item.heading + " | " + item.date}
           </p>
     
     
