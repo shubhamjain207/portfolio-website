@@ -9,19 +9,22 @@ let contactlink = document.getElementsByClassName('contactlink')[0];
 const currentPageUrl = window.location.href;
 
 
-if (currentPageUrl.includes('index')) {
-      homelink.classList.add('active-link');
-}
 
 
-else if (currentPageUrl.includes('About')) {
+ if (currentPageUrl.includes('about')) {
   aboutlink.classList.add('active-link');
 } 
 
-else if (currentPageUrl.includes('Contact')) {
+else if (currentPageUrl.includes('contact')) {
     contactlink.classList.add('active-link');
 }
+else{
+  
 
+  homelink.classList.add('active-link');
+
+
+}
 
 let a = [ 
 
