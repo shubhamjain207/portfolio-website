@@ -1,8 +1,8 @@
 let homelink = document.getElementsByClassName('homelink')[0];
-let bloglink = document.getElementsByClassName('bloglink')[0];
+
 let aboutlink = document.getElementsByClassName('aboutlink')[0];
 let contactlink = document.getElementsByClassName('contactlink')[0];
-let resumelink = document.getElementsByClassName('resumelink')[0];
+
 
 
 
@@ -10,22 +10,16 @@ const currentPageUrl = window.location.href;
 
 
 if (currentPageUrl.includes('index')) {
-  homelink.classList.add('active-link');
+      homelink.classList.add('active-link');
 }
 
-else if (currentPageUrl.includes('Blogs')) {
-  bloglink.classList.add('active-link');
-} 
+
 else if (currentPageUrl.includes('About')) {
   aboutlink.classList.add('active-link');
 } 
 
 else if (currentPageUrl.includes('Contact')) {
     contactlink.classList.add('active-link');
-}
-
-else if (currentPageUrl.includes('Resume')) {
-  resumelink.classList.add('active-link');
 }
 
 
@@ -102,7 +96,8 @@ let photographySection1 = document.getElementById("photographySection");
 a.forEach((item)=>{
    photographySection1.innerHTML+=`
 
-   <img src="./images/${item}"></img>
+   
+   <img src="./images/${item}" loading="lazy" decoding="async"></img>
   
    `;
 
@@ -113,7 +108,7 @@ let artSection1 = document.getElementById("artSection");
 b.forEach((item)=>{
    artSection1.innerHTML+=`
 
-   <img src="./art/${item}"></img>
+   <img src="./art/${item}" loading="lazy"></img>
   
    `;
 
