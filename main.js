@@ -19,11 +19,7 @@ else if (currentPageUrl.includes('contact')) {
     contactlink.classList.add('active-link');
 }
 else{
-  
-
   homelink.classList.add('active-link');
-
-
 }
 
 let a = [ 

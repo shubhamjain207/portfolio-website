@@ -153,19 +153,21 @@ const file = file1.files[0];
 
       getDownloadURL(storageRef)
       .then(async (url) => {
-        console.log("log-->"+url);
+      
         imageUrl = url;
 
         let content2 = content1.value;
         let date2 = date1.value;
         let heading2 = heading1.value;
         let image2 = imageUrl;
-        
+
+        console.log("IMAGE____<" + image2);
+
         const data = {
           content:content2,
           date:date2,
           heading:heading2,
-          image:image2,
+          image:image2 == null?"":image2,
           timestamp:Date.now().toString()
         }
       
@@ -184,7 +186,30 @@ const file = file1.files[0];
       console.error("Error uploading file:", error);
     });
   } else {
-    console.error("No file selected.");
+   
+    
+
+    let content2 = content1.value;
+    let date2 = date1.value;
+    let heading2 = heading1.value;
+    let image2 = imageUrl;
+
+
+    const data = {
+      content:content2,
+      date:date2,
+      heading:heading2,
+      image:image2,
+      timestamp:Date.now().toString()
+    }
+  
+  
+  const docRef = await addDoc(myCollection, data);
+
+  document.location.reload();
+
+
+
   }
 
 
