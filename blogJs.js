@@ -208,8 +208,6 @@ const file = file1.files[0];
 
   document.location.reload();
 
-
-
   }
 
 

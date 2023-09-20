@@ -164,6 +164,12 @@ width: 200px;
     gap: 10px;
 }
 
+/* #newImage img{
+transform: rotate(90deg);
+    height: 100px;
+width: 100px;
+} */
+
 #photographySection p{
     font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
@@ -171,7 +177,7 @@ width: 200px;
 }
 
 #photographySection img{
-
+    transform: rotate(90deg);
     height:120px;
     width:120px;
 }
