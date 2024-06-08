@@ -321,6 +321,24 @@ width: 110px;
     font-size: 13px;
 }
 
+/* Projects section */
+
+#projectsGrid{
+
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+}
+
+.projectsGridItem{
+
+display: flex;
+flex-direction: column;
+padding: 20px;
+justify-content: center;
+align-items: center;
+}
+
 
 
 @media all and (max-width:1000px) {
