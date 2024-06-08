@@ -2,12 +2,12 @@ let homelink = document.getElementsByClassName('homelink')[0];
 
 let aboutlink = document.getElementsByClassName('aboutlink')[0];
 let contactlink = document.getElementsByClassName('contactlink')[0];
+let projectsLink = document.getElementsByClassName('projectlink')[0];
 
 
 
 
 const currentPageUrl = window.location.href;
-
 
 
 
@@ -18,6 +18,11 @@ const currentPageUrl = window.location.href;
 else if (currentPageUrl.includes('contact')) {
     contactlink.classList.add('active-link');
 }
+
+else if (currentPageUrl.includes('projects')) {
+  projectsLink.classList.add('active-link');
+}
+
 else{
   homelink.classList.add('active-link');
 }
