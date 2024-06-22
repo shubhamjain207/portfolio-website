@@ -15,7 +15,7 @@
         <div class="navTop">
             <span id="name">Shubham Jain</span>
          
-            <button ondblclick="secretBtn()">Tap</button>
+            <!-- <button ondblclick="secretBtn()">Tap</button> -->
 
         
         </div>
@@ -33,12 +33,11 @@
                 
             </ul>
 
-          
-
-
+        
         </div>
 
-        <div id="BlogForm">
+        
+        <!-- <div id="BlogForm">
 
             content:<textarea type="text" id="content" rows="20" cols="20"></textarea>
             date:<input type="text" id="date">
@@ -46,21 +45,884 @@
             file:<input type="file" id="file">
             <button id="uploadBlog">Upload</button>
 
+        </div> -->
+
+        <div id="blogList" bis_skin_checked="1">
+
+          
+            <div class="blogItem" bis_skin_checked="1">
+      
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FScreenshot%20(201).png?alt=media&amp;token=7220de2c-7f55-4afc-ab7a-cfee39fe62e2">
+      
+            <p class="blogHeading">
+                  Object loading along with texture atlas | OpenGL engine | 28/04/2024
+            </p>
+      
+      
+      
+            <p class="blogContent">
+               Object loading from blender to OpenGL engine. Scrapping off the vertices, categorizing them in position, color, texture, and normals. With the help of a texture packer, combining textures used in your model. Making the model in blender, combining the individual components by ctrl+j, applying the textures by UV editor. 
+            </p>
+        </div>
+            
+      
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2F2024-04-23%2003-02-37.mp4?alt=media&amp;token=9ea33512-fa05-457c-8fc4-7b870aeee635">Link</a>
+      
+        <p class="blogHeading">
+              Diffuse Lightning | OpenGL | 23/04/2024
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           In diffuse lightning, first we set up our normal vectors, which is just a unit vector perpendicular to the object. It is an addition to our Vertex's children namely position, color, texture. Then we calculate the direction the object is pointing towards light by subtracting light's position from the object's position. Moving on we calculate the dot product between both the vectors (Normals and direction vector) to get the angle, which is the diffusion strength. Finally, we multiply the diffusion strength with the light color to get the light reflection of each Vertex point. The portion with maximum angle (generally 90) reflects the most light, hence appear brighter
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2F2024-03-29%2017-02-49.mp4?alt=media&amp;token=91e00709-d7eb-48f2-9cee-7d358d7f3a1d">Link</a>
+      
+        <p class="blogHeading">
+              Voxel Terrain Generation - OpenGL | 29/03/2024
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           This is a "Voxel" terrain chunk generated with the help of Simplex noise. Here first we decide the length and breadth of the chunk, in which individual cubes will be rendered using instancing of course, otherwise it would hinder the fps. Then, a height for individual pillar is determined using "Simplex Noise" 
+   top_level_y = glm::simplex(glm::vec2{ i / 40.0f,j / 40.0f }) * 30, here two values need to be noted, 1)40.0f and 2)30. For example, the noise generated values 1 and 10 for pillar 1 and 2 respectively, it means there is a good amount of difference between them, in this case it will not give the shape of the mountain. To resolve this we divide i and j with some value to "smoothen" out the values so that the difference between the group of values become less and it gives a shape of a terrain. 30 here, is just to specify the height of pillars, as noise values are extremely small.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2F2024-03-24%2022-05-15.mp4?alt=media&amp;token=0d82551e-9e96-43d2-bb53-9bfb771c2bf0">Link</a>
+      
+        <p class="blogHeading">
+              2 Body Problem | OpenGL/C++ | 23/02/2024
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           First I rendered two spheres first at x position -100 and second at 100 considering the opengl projection frustum, I gave them masses of 1.0f each and G is 1 here to simplify calculations, Calculated the distance between them and normalized it, then calculated the force magnitude and multiplied it with distance vector to get a final force vector, for both its in different directions as they attract each other, next I gave a initial acceleration at y axis of 2.0f for both (as a momentum), then I calculated the acceleration for each planet by force magnitude / mass,  of planet, I multiplied it with timestep to integrate it to get the velocity, and keep accumulating it to the velocity vector, then I integrate it further my multiplying it with timestep to get position and adding the position to previous position so that the planet attracted to each other, but the initial acceleration which was given, is making sure they orbit one another                          
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+            <div class="blogItem" bis_skin_checked="1">
+      
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FScreenshot%20(179).png?alt=media&amp;token=b746ed4c-3361-40c7-a9ca-05a2a79c9434">
+      
+            <p class="blogHeading">
+                  Instancing - OpenGL | 23/02/2024
+            </p>
+      
+      
+      
+            <p class="blogContent">
+               Simulation of millions of objects (even less or more) at once without lagging. 
+  We set up an extra layout location in vertex shader for our data to pass through, (better than uniforms in my opinion). 
+  Then set up a VBO for the layout, set the sizes of vertices, give the data, which is usually an array of matrices or values, and send it to the buffer object. 
+  Although we can change the data by glBufferData(), (don't forget to change to GL_DYNAMIC_DRAW), changing in the sense we can perform transformations (rotation, translations, changing colors, etc). 
+  Use glDrawArraysInstanced instead of normal glDrawArrays!
+            </p>
+        </div>
+            
+      
+            
+            
+            
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2F2024-01-31%2002-20-05.mp4?alt=media&amp;token=a78feb14-fe81-476f-b2bb-c16563f814bd">Link</a>
+      
+        <p class="blogHeading">
+              Sand Simulation - OpenGL | 31/01/2024
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           "Made Sand Simulation in OpenGL. -Prototyped it first in legacy OpengGL. -Ported it to modern opengl because of shader support. -adding the mesh to the vector<mesh> every time we click, and continuously checking if its y axis gets less than -1. -And also to stack the sand particle, and give an illusion of sand dump, checking if the i+1 sand particle in vector is less than any sand particle y axis."
+  
+        </mesh></p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2F2023-10-16%2016-07-42.mp4?alt=media&amp;token=56ebf42e-72e1-4382-9165-7e1393f13e78">Link</a>
+      
+        <p class="blogHeading">
+              Raylib - Platformer | 17/10/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Tried creating a custom tilemap for the levels of my game in raylib. It's satisfying creating levels in the game itself. Will develop it even more so that I can drag and drop different tiles, too.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2F2023-10-01%2018-30-06.mp4?alt=media&amp;token=2cb52334-dd13-4a93-847d-74b30abcdedd">Link</a>
+      
+        <p class="blogHeading">
+              Diffusion Light - OpenGl | 1/10/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Achieved diffusion effect after numerous hours of debugging.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2F2023-09-30%2004-43-30.mp4?alt=media&amp;token=a947adc8-e867-4bba-b699-4496b4ac92ff">Link</a>
+      
+        <p class="blogHeading">
+              Puzzle Game - SDL2 | 30/09/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Game loop iterating smooth:)
+  -Main while loop for three functions (for now) which returns different strings, for respective screens. 
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2F2023-09-24%2018-58-53.mp4?alt=media&amp;token=05104d53-4ea0-414c-84c4-b9ff15c9d101">Link</a>
+      
+        <p class="blogHeading">
+              Q - Table (Arrows) | 24/09/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Environment ready for learning. Had to make the stick learn to always hit the red bar. 
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+            <div class="blogItem" bis_skin_checked="1">
+      
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FScreenshot%202023-09-23%20061906.jpg?alt=media&amp;token=d6f9bdbd-a8ad-438e-840b-ceb94f5af30e">
+      
+            <p class="blogHeading">
+                  Textures - OpenGl | 23/09/23
+            </p>
+      
+      
+      
+            <p class="blogContent">
+               Some troubleshooting needed, for applying textures. Gave a cool shape instead. No complaints though.
+            </p>
+        </div>
+            
+      
+            
+            
+            
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2F2023-09-21%2005-08-23.mp4?alt=media&amp;token=8732d9b2-eb21-4813-ac3c-1f9389fdfbcb">Link</a>
+      
+        <p class="blogHeading">
+              SDL2/C++ | 21/09/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Started making a platformer in SDL2/C++. Hopefully, the prototype will be finished in 3 or 4 days. Shooting rectangles as bullets doesn't seem  to work for some reason, so drawn pixels instead. 
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+            <div class="blogItem" bis_skin_checked="1">
+      
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FScreenshot%202023-09-21%20050117.jpg?alt=media&amp;token=a949f051-5f32-46af-a426-4dffc7a86a42">
+      
+            <p class="blogHeading">
+                  OpenGl | 13/09/23
+            </p>
+      
+      
+      
+            <p class="blogContent">
+               Diffuse Lightning, still need to set the coords in world space. 
+            </p>
+        </div>
+            
+      
+            
+            
+            
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2F2023-09-21%2004-51-18.mp4?alt=media&amp;token=e7b97642-2d00-4e1f-9ed5-ba71663bcd7a">Link</a>
+      
+        <p class="blogHeading">
+              QsandAns - Springboot | 10/09/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Sneak peak of my Qs and ans website.Made using HTML, CSS, Javascript and Sprinboot as backend. Took 1.5 months as the main motive was to learn Springboot framework along with Spring security, which was the toughest architecture I stumbled upon. Literally, brain fogged!! but got over. Cheers.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+            <div class="blogItem" bis_skin_checked="1">
+      
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FF5T4j97XIAAKbDm.png?alt=media&amp;token=8eb5ac4e-e2d1-477b-94f0-d5e06bbd69b2">
+      
+            <p class="blogHeading">
+                  OpenGl/C++ | 05/09/23
+            </p>
+      
+      
+      
+            <p class="blogContent">
+               
+            </p>
+        </div>
+            
+      
+            
+            
+            
+            
+            <div class="blogItem" bis_skin_checked="1">
+      
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FF5JqH64XEAAvADR.png?alt=media&amp;token=7060332e-8f35-4060-8b61-16b99b2af5da">
+      
+            <p class="blogHeading">
+                  SDL2/C++ | 04/09/23
+            </p>
+      
+      
+      
+            <p class="blogContent">
+               Glitch
+            </p>
+        </div>
+            
+      
+            
+            
+            
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1698327609971482624(720p).mp4?alt=media&amp;token=5f2dc34d-5b4d-4c40-a4e3-a71b47f11e54">Link</a>
+      
+        <p class="blogHeading">
+              Springboot/Javascript/Java | 03/09/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Some Design Added.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1697280337376657408(720p).mp4?alt=media&amp;token=0781eec0-e3a9-4862-88a0-e3e36018ff50">Link</a>
+      
+        <p class="blogHeading">
+              Springboot/Javascript/Java | 31/08/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Designing needs to be done. Used Springboot as backend and MySql as database. Took me a month as I was learning Sprinboot, spring security, REST architecture simultaneously, but the amount of knowledge I gained is insane. Looking forward to adding more and more features.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1695506420593053696(720p).mp4?alt=media&amp;token=200aeb44-55e4-40d9-b0e2-15e9c0301cbd">Link</a>
+      
+        <p class="blogHeading">
+              SDL2/C++ | 26/08/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Designing needs to be done. Used Springboot as backend and MySql as database. Took me a month as I was learning Sprinboot, spring security, REST architecture simultaneously, but the amount of knowledge I gained is insane. Looking forward to adding more and more features.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+            <div class="blogItem" bis_skin_checked="1">
+      
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FF3n414tWYAALjBA.png?alt=media&amp;token=61d9c744-2686-4666-8079-ca5e7e6c9de0">
+      
+            <p class="blogHeading">
+                  SDL2/C++ | 16/08/23
+            </p>
+      
+      
+      
+            <p class="blogContent">
+               Rings created using Sin and Cos functions in SDL2/C++.
+            </p>
+        </div>
+            
+      
+            
+            
+            
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1689949107119370240(720p).mp4?alt=media&amp;token=ff4aa574-b12a-4cdc-b277-486473428d38">Link</a>
+      
+        <p class="blogHeading">
+              SDL2/C++ | 11/08/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Not a perfect Maurer rose but close. 
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1686334197043019776(720p).mp4?alt=media&amp;token=a0280d44-9c44-4b7a-ba87-230f8c4ef830">Link</a>
+      
+        <p class="blogHeading">
+              Javasript | 01/08/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Removed home page and recommended videos. No distractions.Extension⤵️<br>                        <a href="https://chrome.google.com/webstore/detail/remove-videos/afnmkebhcglbjbdljbgbcepnlgooiohj?hl=en&amp;authuser=2">Extension</a>
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1684060515662721025(720p).mp4?alt=media&amp;token=e50f399e-9b48-4260-8a98-b731a0037c40">Link</a>
+      
+        <p class="blogHeading">
+              Raylib/C++ | 26/07/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           It's always fun playing with the math. Drawn using raylib in c++.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1683689688429633537(720p).mp4?alt=media&amp;token=09b03c9e-b90a-4cec-96ca-f03d8aeb7fbf">Link</a>
+      
+        <p class="blogHeading">
+              SDL2/C++ | 25/07/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Magnets.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1677769191342895107(720p).mp4?alt=media&amp;token=866c8658-8b8f-41ed-8433-1d9656a2c80c">Link</a>
+      
+        <p class="blogHeading">
+              SDL2/C++ | 08/07/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Rays are here. Now comes the challenging part to hide the rays, whenever it collides with the walls, basically absorption of light by the wall.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1674653447100964865(720p).mp4?alt=media&amp;token=053ce0da-3bf4-4efb-b7f3-68567cd5a947">Link</a>
+      
+        <p class="blogHeading">
+              Raylib/C++ | 30/06/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Basic structure is done. Need to be a bit more accurate with the planets' size, there revolution speed and some tweaks to make them more realistic.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1657901085565108228(720p).mp4?alt=media&amp;token=54ed60fc-3db1-467a-8287-f4dfe7cbbe5c">Link</a>
+      
+        <p class="blogHeading">
+              SFML/C++ | 15/05/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Pendulum
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1647351213837410305(720p).mp4?alt=media&amp;token=339e845f-b261-4825-926d-ab546577707f">Link</a>
+      
+        <p class="blogHeading">
+              SFML/C++ | 15/04/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Finally came up with a solution to blink the stars at random positiona. Blinking appears fast because of OBS 60 fps recording. It's much slower in real. 
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1645055932492046337(720p).mp4?alt=media&amp;token=b0a50164-c3e4-4032-b8f4-34747ae531ad">Link</a>
+      
+        <p class="blogHeading">
+              LWJGL/Java | 09/04/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Smoother Rainfall.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1623823957915729920(710p).mp4?alt=media&amp;token=8a6d42ce-0e56-464b-abc5-cfef9595da66">Link</a>
+      
+        <p class="blogHeading">
+              Android Studio/Kotlin | 09/02/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Created something till now.. Registration or new user✅ Sign in existing user✅ Profile setup (setting up profile photo and username)✅ Home screen, which displays the list of image views of the current user and his followers.✅ Photo Uploading functionality.✅
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+            <div class="blogItem" bis_skin_checked="1">
+      
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FFoaH2UCWAAEjcWB.jpg?alt=media&amp;token=5cf972cb-b088-44c7-8b8c-ff48d0207c53">
+      
+            <p class="blogHeading">
+                  Recursion | 08/02/23
+            </p>
+      
+      
+      
+            <p class="blogContent">
+               No wonder Recursion is the beauty of computer science. One has to imagine the problem in simple ( non-coding ) terms and generalize the relation with the lower values, and then it works like magic by just playing with function calls.
+            </p>
+        </div>
+            
+      
+            
+            
+            
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1610746335686234128(1066p).mp4?alt=media&amp;token=110351fb-8a08-42d4-9dba-65b5f7ec52eb">Link</a>
+      
+        <p class="blogHeading">
+              Android Studio/Kotlin | 04/01/23
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Added a play pause icon in the button and done some designing.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1599021543014641664(360p).mp4?alt=media&amp;token=cc14b1f4-7ddb-4a75-b91e-9f47b355d3c3">Link</a>
+      
+        <p class="blogHeading">
+              LibGdx/Box2D/Java | 03/12/22
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Rope Joint mechanism in LibGdx with box2d. Its fun working with joints, most interesting thing I have seen in a while.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1"> 
+      
+        <p class="blogHeading">
+               | 21/09/22
+        </p>
+      
+  
+        <p class="blogContent">
+           I was stuck in a loophole of reading documentations and watching tutorials about fps view for hours, after no conclusion figured out a way by myself, it was so easy. One needs to calm down and think for a minute.
+        </p>
+      </div>
+       
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FUntitled%20video%20-%20Made%20with%20Clipchamp%20(2).mp4?alt=media&amp;token=4c3a27e5-b578-4b93-b739-53ee99b162e0">Link</a>
+      
+        <p class="blogHeading">
+              Android Studio/Java | 25/08/22
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Done a bit of designing on my music player app, the looping music logo looks good too🎵.Many functionalities are left to be implemented for instance, next and previous song buttons, notification player, etc.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1546184400416931842(360p).mp4?alt=media&amp;token=567154b2-6499-4a50-baa6-0882c1f51e46">Link</a>
+      
+        <p class="blogHeading">
+              PyGame/Python | 10/07/22
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Snake game                      ✅Main menu                     ✅Snake and food functionality                     ✅Game over screen                      ✅Saving High score in python file                      ✅Sound effects                     All done.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+            <div class="blogItem" bis_skin_checked="1">
+      
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FFQewktTagAAOsnm.png?alt=media&amp;token=ffc88dcc-acd4-4f4c-b874-e8da34e9998d">
+      
+            <p class="blogHeading">
+                  Krita | 10/07/22
+            </p>
+      
+      
+      
+            <p class="blogContent">
+               Tried pixel art by making a spacecraft kind of vehicle for my game.
+            </p>
+        </div>
+            
+      
+            
+            
+            
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1433105069738639362(360p).mp4?alt=media&amp;token=0f9f4445-b443-4ff0-8950-9dd0c10ec67b">Link</a>
+      
+        <p class="blogHeading">
+              LibGdx/Java | 01/09/21
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Started making a drawing board,will hopefully make some more shapes. Line is implemented by continuosly setting origin points on click and continuosly changing positions of end points on drag.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+            <div class="blogItem" bis_skin_checked="1">
+      
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FE-CXjiTVkAkPZkf.jpg?alt=media&amp;token=63a83911-5408-4cb0-80f7-1fbc5fa6f297">
+      
+            <p class="blogHeading">
+                  LibGdx/Java | 30/08/21
+            </p>
+      
+      
+      
+            <p class="blogContent">
+               Completed pong for desktop in Java/libgdx.
+            </p>
+        </div>
+            
+      
+            
+            
+            
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1429847275220602881(360p).mp4?alt=media&amp;token=f956d589-89cf-47c1-8879-eaa2454570b1">Link</a>
+      
+        <p class="blogHeading">
+              Html/css/javascript | 23/08/21
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Made analog clock,was a bit of a hassle in deciding rotations for each hand.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1429414859687350273(960p).mp4?alt=media&amp;token=19075f9b-a640-4595-8841-b6efe5cb393f">Link</a>
+      
+        <p class="blogHeading">
+              Android Studio/Java | 22/08/21
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           My step counter app works fine,have to input height and weight because it affects the calories burnt.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1426548444022284292(960p).mp4?alt=media&amp;token=f4249abe-16c8-4fc8-86a3-0ce068a06478">Link</a>
+      
+        <p class="blogHeading">
+              LibGdx/Java | 14/08/21
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           It's raining in java.
+        </p>
+      </div>
+        
+      
+        
+        
+        
+            
+        <div class="blogItem" bis_skin_checked="1">
+      
+      <a href="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSaveTwitter.Net_1426191178593038336(960p).mp4?alt=media&amp;token=5c8511b8-efe5-46d3-b098-56516845f8d8">Link</a>
+      
+        <p class="blogHeading">
+              libgdx/Java | 13/08/21
+        </p>
+      
+      
+      
+        <p class="blogContent">
+           Created a visual program of bubble sort algorithm in java using libgdx.
+        </p>
+      </div>
+        
+      
+        
+        
         </div>
 
-        <div id="blogList">
+
+        <!-- for fetching the blogs from the database -->
+        <!-- <div id="blogList">
 
           
             
 
-        </div>
+        </div> -->
 
        
 
 
     </div>
 
-     <script type="module" src="./blogJs.js"></script>
+     <!-- <script type="module" src="./blogJs.js"></script> -->
      <script src="./main.js"></script>
 
 </body>
