@@ -41,6 +41,38 @@
         </div> -->
 
       <div id="blogList" bis_skin_checked="1">
+
+        <div class="blogItem" bis_skin_checked="1">
+          <img
+            src="      https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2F2024-06-1517-57-48-ezgif.com-video-to-gif-converter.gif?alt=media&token=8a1b4075-d224-439b-8c94-13bcd5f8b130
+"
+          />
+
+          <p class="blogHeading">
+            Attenuation implementation | OpenGL engine | 15/06/2024
+          </p>
+
+          <p class="blogContent">
+            Attenuation means to decrease the light intensity on the fragment,
+            when the distance between the fragment and the light increases. For
+            applying attenuation, we use a formula - 1/constant value +
+            linearValue * distance + quadraticValue * (distance)squared.<br><br>
+            <img
+            src="images/Screenshot 2024-07-11 214029.png" id="blogItemAttenuation"
+          /><br><br>
+            Constant value always remains same to avoid division by zero. If the
+            linear value is more than quadratic light diminishes slowly by
+            distance between fragment and light position because of the linear
+            increment. It is most preferable in no artificial light settings
+            like fog or smoke. If the quadratic value is more than linear, light
+            diminishes quickly by distance because the increment is exponential.
+            Used in point light system, for instance. This value is then
+            multiplied with the final light value generally that of diffuse
+            light.
+          </p>
+        </div>
+
+        
         <div class="blogItem" bis_skin_checked="1">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2F2024-05-0604-52-54-ezgif.com-video-to-gif-converter.gif?alt=media&token=31616f15-3f55-4ab5-9981-cdca117c0296"
