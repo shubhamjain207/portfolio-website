@@ -229,10 +229,10 @@ width: 100px;
 
 .blogItem{
     font-family:Helvetica;
-    width: 70%;
+    width: 75%;
     color:#333;
     height: auto;
-    padding: 20px;
+    padding: 30px 20px;
     border-bottom:1px solid rgba(0, 0, 0, 0.218);
     font-size: 13px;
     
@@ -240,7 +240,7 @@ width: 100px;
 
 
 .blogHeading{
-    font-weight:500;
+    font-weight:550;
 }
 
 
@@ -254,6 +254,15 @@ width: 100px;
     height: 150px;
     width: 500px;
 }
+
+#blogItemTorchImage1{
+
+/* transform: rotate(-90deg);
+width:100px;
+height:500px; */
+
+}
+
 
 
 /* Contact SECTION */

@@ -41,6 +41,43 @@
         </div> -->
 
       <div id="blogList" bis_skin_checked="1">
+        <div class="blogItem" bis_skin_checked="1">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2Ftorchblog1.png?alt=media&token=294db380-7dbb-4cf1-9558-ded5268178f0"
+          />
+
+          <p class="blogHeading">Torch Light | OpenGL engine | 22/06/2024</p>
+
+          <p class="blogContent">
+            First we set up the light and its position, we want to project light
+            on a fragment to give a torch effect, means light calculations in
+            circular shape. Then we calculate a unit direction vector from
+            object to light. Now we got many unit vectors which are pointing
+            towards the light on each vertex. To simplify the explanation we are
+            projecting the light downwards as light is above the object. So, the
+            direction in which the light is aiming at the object will simply be
+            (0.0,1.0,0.0). Now, we calculate the cosine of angle between these
+            two unit vectors, by calculating their dot product.<br /><br />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2Ftorchblog.jpg?alt=media&token=52e2fe56-17d8-40af-98a7-0820cce10492"
+              id="blogItemTorchImage1"
+            />
+
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2Ftorchblog2.png?alt=media&token=b6e7b736-ec7d-46a1-8519-4703087e56ce"
+              id="blogItemTorchImage2"
+            /><br /><br />
+            
+            There are two vectors a and b, pointing in lets say opposite
+            direction, which makes the angle 180 degrees, then cosine of angle
+            180 would be -1, which means one vectors needs to be scaled by -1 to
+            point in the same direction as the other one. We already have a cut
+            off value which is a cos of angle, acting as a radius of light. If
+            our calculated value is less than the cutoff value we compute the
+            light we want in the torch else we can make it dark to give a torch
+            effect.
+          </p>
+        </div>
 
         <div class="blogItem" bis_skin_checked="1">
           <img
@@ -56,10 +93,11 @@
             Attenuation means to decrease the light intensity on the fragment,
             when the distance between the fragment and the light increases. For
             applying attenuation, we use a formula - 1/constant value +
-            linearValue * distance + quadraticValue * (distance)squared.<br><br>
+            linearValue * distance + quadraticValue * (distance)squared.<br /><br />
             <img
-            src="images/Screenshot 2024-07-11 214029.png" id="blogItemAttenuation"
-          /><br><br>
+              src="images/Screenshot 2024-07-11 214029.png"
+              id="blogItemAttenuation"
+            /><br /><br />
             Constant value always remains same to avoid division by zero. If the
             linear value is more than quadratic light diminishes slowly by
             distance between fragment and light position because of the linear
@@ -72,14 +110,14 @@
           </p>
         </div>
 
-        
         <div class="blogItem" bis_skin_checked="1">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2F2024-05-0604-52-54-ezgif.com-video-to-gif-converter.gif?alt=media&token=31616f15-3f55-4ab5-9981-cdca117c0296"
           />
 
           <p class="blogHeading">
-            Bullet Physics Integration in OpenGL Engine | OpenGL engine | 6/05/2024
+            Bullet Physics Integration in OpenGL Engine | OpenGL engine |
+            6/05/2024
           </p>
 
           <p class="blogContent">
@@ -92,13 +130,13 @@
             add it to the dynamics world. Before creating the body make sure to
             create the context for the world like broadPhase, dispatcher, etc.
             Set the gravity, after that start creating the rigidbody as needed.
-            Now we got the body address. <br>
-            Now as the bodies may move, for that we need the body's world transform by
-            body->getMotionState()->getWorldTransform(bttransform), we get the
-            body position by bttransform.getOrigin() which we further send to
-            our translation matrices. Physics is just vertices game. We get the
-            transformed vertices, which are the result of physics laws. Those
-            vertices we can use, and apply to out meshes to get realistic
+            Now we got the body address. <br />
+            Now as the bodies may move, for that we need the body's world
+            transform by body->getMotionState()->getWorldTransform(bttransform),
+            we get the body position by bttransform.getOrigin() which we further
+            send to our translation matrices. Physics is just vertices game. We
+            get the transformed vertices, which are the result of physics laws.
+            Those vertices we can use, and apply to out meshes to get realistic
             results. is it a good intro to bullet phsyics in opengl
           </p>
         </div>
