@@ -305,6 +305,7 @@ width: 110px;
 #linksContainer{
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 

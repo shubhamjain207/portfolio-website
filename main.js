@@ -1,9 +1,10 @@
+
+
 let homelink = document.getElementsByClassName('homelink')[0];
 
 let aboutlink = document.getElementsByClassName('aboutlink')[0];
 let contactlink = document.getElementsByClassName('contactlink')[0];
 let projectsLink = document.getElementsByClassName('projectlink')[0];
-
 
 
 
@@ -90,7 +91,22 @@ function secretBtn(){
 
 let photographySection1 = document.getElementById("photographySection");
 
+const folderPath = "./images"; 
+
+
 a.forEach((item)=>{
+
+  //  const filePath = path.join(folderPath, item);
+  
+  //   bucket.upload(filePath, {
+  //     destination: "photography/" + filename,
+  //   }).then(() => {
+  //     console.log(`${filename} uploaded to Firebase Storage.`);
+  //   }).catch(error => {
+  //     console.error(`Error uploading ${filename}:`, error);
+  //   });
+  
+
    photographySection1.innerHTML+=`
 
    

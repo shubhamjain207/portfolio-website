@@ -42,6 +42,30 @@
 
       <div id="blogList" bis_skin_checked="1">
         <div class="blogItem" bis_skin_checked="1">
+          <p class="blogHeading">Torch Light | OpenGL engine | 22/06/2024</p>
+
+          <p class="blogContent">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2Fdepthtest2.png?alt=media&token=c1686661-e943-48a4-9423-241cbafba7e7"
+            />
+
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2Fdepthtest1.png?alt=media&token=0b1f8994-2e05-4638-80b1-07f04a97a67a"
+            /><br /><br />
+
+            Before and after applying depth testing, the fragments with depth
+            values closer to the camera are drawn, and fragments behind them
+            (with greater values) are discarded. When these values are
+            multiplied with the final color in the fragment shader, we get a
+            smooth shading effect. <br />
+            In shaders, the depth value can be used creatively to achieve visual
+            effects like smooth shading. For example, multiplying the fragment's
+            final color with its depth value can create a gradient effect that
+            simulates depth perception.
+          </p>
+        </div>
+
+        <div class="blogItem" bis_skin_checked="1">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2Ftorchblog1.png?alt=media&token=294db380-7dbb-4cf1-9558-ded5268178f0"
           />
@@ -67,7 +91,7 @@
               src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2Ftorchblog2.png?alt=media&token=b6e7b736-ec7d-46a1-8519-4703087e56ce"
               id="blogItemTorchImage2"
             /><br /><br />
-            
+
             There are two vectors a and b, pointing in lets say opposite
             direction, which makes the angle 180 degrees, then cosine of angle
             180 would be -1, which means one vectors needs to be scaled by -1 to
