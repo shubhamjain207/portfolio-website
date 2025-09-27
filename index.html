@@ -40,7 +40,164 @@
 
         </div> -->
 
+
+            
       <div id="blogList" bis_skin_checked="1">
+<div class="blogItem" bis_skin_checked="1">
+  <p class="blogHeading">Sky and Sun Color syncing for Day and Night | 24/09/2025</p>
+
+  <p class="blogContent">
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FSrWScVGIbAFbXKk_1-ezgif.com-speed.gif?alt=media&token=4c5ba2cc-25ba-4f52-aee1-4fc87b29f99c"     
+      alt="OpenGL Pic"
+    /><br /><br />
+
+    I built a simple but effective Day–Night Cycle in OpenGL by linking the <b>sky color</b> and <b>sunlight color</b> to the vertical position of the sun.  
+    The key idea is to calculate a <code>sunHeight</code> which is normalized between -1.0 (sun below horizon) and 1.0 (sun directly above).  
+    Based on this value, I smoothly transition colors to represent night, dawn/dusk, or bright daytime.
+
+    <br>
+    <br>
+
+    - <b>Night (when <code>sunHeight ≤ 0.0</code>)</b>:  
+    The sun is below the horizon, so the sky uses a dark <code>nightColor</code> and the light becomes a dim nighttime tone.
+
+    <pre><code class="language-cpp">
+    skyColor   = nightColor;
+    lightColor = nightSunColor;
+    </code></pre>
+
+    - <b>Dawn and Dusk (when <code>0.0 &lt; sunHeight &lt; 0.2</code>)</b>:  
+    Here the sun is just crossing the horizon, so colors are blended between night and dawn tones.  
+    The interpolation factor <code>k</code> makes this fade look natural, working both for sunrise and sunset.
+
+    <pre><code class="language-cpp">
+    float k = sunHeight / 0.2f;
+    skyColor   = glm::mix(nightColor, dawnColor, k);
+    lightColor = glm::mix(nightSunColor, dawnSunColor, k);
+    </code></pre>
+
+    - <b>Day Transition (when <code>0.2 ≤ sunHeight &lt; 0.8</code>)</b>:  
+    As the sun climbs higher, the scene gradually shifts from warm dawn tones to bright midday colors.
+
+    <pre><code class="language-cpp">
+    float k = (sunHeight - 0.2f) / 0.6f;
+    skyColor   = glm::mix(dawnColor, dayColor, k);
+    lightColor = glm::mix(dawnSunColor, daySunColor, k);
+    </code></pre>
+
+    - <b>Midday (when <code>0.8 ≤ sunHeight ≤ 1.0</code>)</b>:  
+    The sun is near its highest point, so the sky and light are fully set to the daytime palette.
+
+    <pre><code class="language-cpp">
+    skyColor   = dayColor;
+    lightColor = daySunColor;
+    </code></pre>
+
+  
+  </p>
+</div>
+
+
+
+
+
+        <div class="blogItem" bis_skin_checked="1">
+  <p class="blogHeading">Langton’s Ant Simulation | 22/09/2025</p>
+
+  <p class="blogContent">
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FmsMVsDddB189KRZ8-ezgif.com-speed.gif?alt=media&token=f3913c60-5e24-499c-ad6c-8b3bd74dc378"
+      alt="Langton's Ant"
+    /><br /><br />
+
+    <b>Langton’s Ant</b> is a simple Turing machine with chaotic yet fascinating emergent behavior.  
+    I implemented it step by step:
+    <br /><br />
+
+    <b>Step 1: Grid Setup</b><br />
+    Initially, I made a grid of rectangles using a struct for each grid cell with <code>x</code> and <code>y</code> coordinates.  
+    Later, I realized I didn’t need to explicitly draw the full grid every frame. Instead, I used a map/dictionary to keep track of which cells were black, and only rendered those. This made it much more efficient.
+
+    <br /><br />
+    <b>Step 2: Ant Setup</b><br />
+    I created a struct for the ant with:
+    <ul>
+      <li><b>Position:</b> (x, y) on the grid</li>
+      <li><b>Direction:</b> The orientation (up, down, left, right)</li>
+    </ul>
+
+    <br />
+    <b>Step 3: Two Simple Rules</b><br />
+    Each step, the ant checks the color of its current cell:
+    <ol>
+      <li>If the cell is <b>white</b>: rotate 90° clockwise, move forward one step, and flip the cell to <b>black</b>.</li>
+      <li>If the cell is <b>black</b>: rotate 90° counter-clockwise, move forward one step, and flip the cell to <b>white</b>.</li>
+    </ol>
+
+    <br />
+    <b>Step 4: Emergent Behavior</b><br />
+    At first, the ant moves around chaotically, flipping colors and leaving behind a noisy-looking pattern.  
+    But the rules are completely deterministic — and after about <b>10,000 steps</b>, something surprising happens:  
+    The ant settles into a repeating cycle, building an infinite “highway” pattern that stretches off the screen.
+    
+    <br /><br />
+    <b>Takeaway:</b> It’s amazing how such a simple set of rules can generate both randomness and order. Chaos first, then structure — a hallmark of emergent systems.
+  </p>
+</div>
+
+
+
+       <div class="blogItem" bis_skin_checked="1">
+  <p class="blogHeading">Boid Simulation | 20/09/2025</p>
+
+  <p class="blogContent">
+   
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/portfoliowebsite-c9bf1.appspot.com/o/blogsimages%2FVTG6bkx3qwGIhhuc-ezgif.com-crop.gif?alt=media&token=d7dd03cf-ebe9-4329-8fb5-2344cedf155f"
+    /><br /><br />
+
+    <b>Boid Simulation</b> is a classic example of emergent behavior based on three simple rules: 
+    <b>Separation</b>, <b>Alignment</b>, and <b>Cohesion</b>.  
+    I implemented this from scratch using these steps:
+    <br /><br />
+
+    <b>Step 1: Initialize Boids</b><br />
+    Each boid is created at a random position with a velocity and direction vector.  
+    Every frame, we update these values based on the three flocking rules.
+    <br /><br />
+
+    <b>1. Separation – Drift away from nearby boids</b><br />
+    I created an invisible circle around each boid (a perception radius).  
+    If any other boid enters this radius, we calculate the direction vector from the other boid to the current one, normalize it, and invert it to move away.  
+    This returns a <code>separation</code> vector.
+
+    <br /><br />
+    <b>2. Alignment – Steer towards average heading</b><br />
+    For all neighbors within the radius, I sum their direction vectors and divide by the count to get the average.  
+    This average vector points where the flock is heading.  
+    <br />
+    <b>Bug fix:</b> Initially I averaged the directions from the current boid to others. The correct approach is to average the <i>neighbors’ direction vectors themselves</i>. Once fixed, boids aligned smoothly.
+
+    <br /><br />
+    <b>3. Cohesion – Steer towards the flock’s center</b><br />
+    I sum the positions of all nearby boids, divide by their count to find the center point (average position), then calculate a direction vector from the current boid to this center.  
+    This ensures the boid stays with the group rather than wandering off.
+
+    <br /><br />
+    <b>Combining the Rules</b><br />
+    Each of the three functions returns a direction vector.  
+    In the main loop, I sum them together and apply the result to the boid’s velocity.  
+    I also limit the velocity to a maximum speed to keep movement natural.
+
+    <br /><br />
+    Once combined, the flock starts to display emergent behavior — groups form, split, rejoin, and move together just like real birds.  
+    It’s fascinating how complex behavior can arise from such simple rules!
+  </p>
+</div>
+
+
+        
         <div class="blogItem" bis_skin_checked="1">
           <p class="blogHeading">Depth testing | OpenGL engine | 11/11/2024</p>
 
